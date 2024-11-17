@@ -84,3 +84,19 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
+
+def post (request,pk):
+    return render(request,'post.html',{
+        'pk':pk
+    })
+
+def profile(request):
+    posts= [1,2,3,4,5,'tim','tom','john']
+    
+
+    return render(request,'numbers.html',{
+        'posts':posts
+        
+
+    })
+    

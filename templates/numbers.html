@@ -1,0 +1,10 @@
+<html>
+    <head>
+        <title>Numbers</title>
+    </head>
+    <body>
+        {% for post in posts%}
+        <p> <a href="{% url 'post' post %}">post</a></p>
+        {% endfor %}
+    </body>
+</html>
