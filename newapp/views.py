@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 
-from .models import Feature
+from .models import Feature,Team
 
 # Create your views here.
 def index(request):
@@ -20,6 +20,7 @@ def greet(request,name):
 def greet1 (request):
     name = "Patrick"
     features = Feature.objects.all()
+    teams = Team.objects.all()
     
 
    
@@ -30,6 +31,7 @@ def greet1 (request):
     return render(request,'index1.html',{
         "name":name.capitalize(),
         "features": features,
+        'teams': teams,
         
 
         })

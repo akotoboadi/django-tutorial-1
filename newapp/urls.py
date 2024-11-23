@@ -1,5 +1,8 @@
 from django.urls import path
 from . import views
+# The code below is needed to import ...
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('',views.greet1,name='greet1'),
@@ -15,3 +18,7 @@ urlpatterns = [
 
 
 ]
+
+# You need the code below to,configure Django to serve media files:
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
